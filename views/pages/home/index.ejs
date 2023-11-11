@@ -1,0 +1,25 @@
+<!-- 
+*@title: string
+*@message: string
+*@data: Array
+ -->
+ <% layout('layout/boilerplate') %>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head> -->
+
+  <!-- <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title> -->
+  <%- include('../../partials/head') %>
+
+<!-- </head> -->
+<!-- <body> -->
+  <h1><%= message %></h1>
+  <ul>
+    <% data.forEach(function(item) { %>
+      <li><%= item %></li>
+    <% }); %>
+  </ul>
+<!-- </body> -->
+<!-- </html> -->
