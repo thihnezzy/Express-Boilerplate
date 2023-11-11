@@ -1,0 +1,29 @@
+ <% layout('layout/boilerplate', {title}) %>
+
+  <h1>Pokemon</h1>
+
+
+  <!-- Cach 1 -->
+  <section class="pokemon-section">
+  <% pokes.forEach(function(poke) { %>
+    <!-- <div class="card">
+      <div class="card-header">
+        <%= poke.name %>
+      </div>
+      <div class="card-body">
+        <p><%= poke.type %></p>
+        <p><%= poke.description %></p>
+      </div>
+    </div> -->
+    <%- include('../../components/Card.ejs', {
+      header : poke.name, 
+      src: poke.image, 
+      body: null,
+      // Cac component long nhau
+      children: `<p class="test">${poke.pokedexId}</p><p>${poke.stats.HP}</p>`
+    }) %>
+  <% }); %>
+</section>
+
+<!-- Cach 2 -->
+<!-- ListPokemon  -->

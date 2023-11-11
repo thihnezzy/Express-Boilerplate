@@ -16,10 +16,14 @@
 <!-- </head> -->
 <!-- <body> -->
   <h1><%= message %></h1>
-  <ul>
+  <ul class="">
     <% data.forEach(function(item) { %>
       <li><%= item %></li>
     <% }); %>
   </ul>
+
+  <section>
+    <%- include('../../components/Card', {header: 'card header', body: 'card body'}) %>
+</section>
 <!-- </body> -->
 <!-- </html> -->
