@@ -56,7 +56,11 @@
         return new bootstrap.Popover(popoverTriggerEl, {
           trigger: 'hover', // Trigger the popover on hover
           html: true, // Allow HTML content inside the popover
-          content: 'Loading...', // Initial content
+          content: `<div class="pokemon-details skeleton-loader">
+  <h5 class="skeleton-text">Loading...</h5>
+  <div class="skeleton-img w-100"></div>
+</div>
+`, // Initial content
         });
       });
     
