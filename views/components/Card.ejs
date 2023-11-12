@@ -1,10 +1,7 @@
 <div class="card">
-  <div class="card-header">
-    <%= header %>
-  </div>
+  <img src="<%= src %>" class="card-img-top w-100">
   <div class="card-body">
-    <img src="<%= src %>">
-    <%- children  %>
-    <p class="card-text"><%= body %></p>
+    <h5 class="card-title"><%= header %></h5>
+    <a href="<%= link %>" class="btn btn-primary">Details <%- icon %></a>
   </div>
 </div>

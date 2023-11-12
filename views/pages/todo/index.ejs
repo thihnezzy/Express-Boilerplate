@@ -10,7 +10,7 @@
 <ul class="todo-list">
 <% todos.forEach(function(todo) { %>
   <li class="todo-item">
-    <p contenteditable="true" data-id="<%= todo._id %>"><%= todo.title %></p>
+    <p data-id="<%= todo._id %>"><%= todo.title %></p>
   </li>
 <% }); %>
 
@@ -18,6 +18,9 @@
 
 <script nonce="<%= nonce %>">
   document.querySelectorAll('.todo-item p').forEach(function(p) {
+    p.addEventListener('dblclick', (e) => {
+      e.target.setAttribute('contenteditable', true);
+    })
     p.addEventListener('blur', function(event) {
       const id = event.target.getAttribute('data-id');
       const updatedTitle = event.target.textContent.trim();

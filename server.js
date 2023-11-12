@@ -13,10 +13,13 @@ app.engine('ejs', ejsEngine);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+// Set up a middleware to generate a nonce for each request
 app.use((req, res, next) => {
   res.locals.nonce = uuid.v4(); // Generate a new nonce for each request
   next();
 });
+
+
 // Middleware
 app.use(helmet());
 app.use(helmet.contentSecurityPolicy({
@@ -30,9 +33,17 @@ app.use(helmet.contentSecurityPolicy({
     scriptSrc: ["'self'", (req, res) => `'nonce-${res.locals.nonce}'`],
   }
 }));
+
+// Body parser
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// Static files
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')));
+app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')));
+
+// Logger
 app.use(logger('dev'));
 
 // Set up mongoose connection
