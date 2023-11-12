@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <!-- Other code -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <% const 
+        navItems = [
+          {name: 'Home', path: '/home'}, 
+          {name: 'Pokemon', path: '/pokemon'}, 
+          {name: 'Simple Todos', path: '/todos'}]; %>
+        <% navItems.forEach(item => { %>
+          <li class="nav-item">
+            <a class="nav-link <%= currentPath === item.path ? 'active' : '' %>" href="<%= item.path %>" <%= item.name === 'Disabled' ? 'tabindex="-1" aria-disabled="true"' : '' %>><%= item.name %></a>
+          </li>
+        <% }); %>
+      </ul>
+    </div>
+  </div>
+</nav>

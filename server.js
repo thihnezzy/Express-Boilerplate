@@ -16,6 +16,7 @@ app.set('views', path.join(__dirname, 'views'));
 // Set up a middleware to generate a nonce for each request
 app.use((req, res, next) => {
   res.locals.nonce = uuid.v4(); // Generate a new nonce for each request
+  res.locals.currentPath = req.path; // Make the current path available in templates
   next();
 });
 

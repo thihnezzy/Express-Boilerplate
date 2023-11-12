@@ -47,7 +47,15 @@ body {
   background-size: cover;
 } 
 
-.todo-item[conteneditable="true"] {
+.todo-item {
+  background: #f8f8f8;
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 10px;
+
+}
+
+.todo-item[contenteditable="true"] {
   background: red;
   border-radius: 12px;
   padding: 10px;

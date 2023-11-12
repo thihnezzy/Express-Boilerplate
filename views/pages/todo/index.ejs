@@ -7,7 +7,7 @@
   <button>Add</button>
 </form>
 
-<ul class="todo-list">
+<ul class="todo-list w-50 px-5 py-4">
 <% todos.forEach(function(todo) { %>
   <li class="todo-item">
     <p data-id="<%= todo._id %>"><%= todo.title %></p>
@@ -15,7 +15,7 @@
 <% }); %>
 
 </section>
-
+<button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
 <script nonce="<%= nonce %>">
   document.querySelectorAll('.todo-item p').forEach(function(p) {
     p.addEventListener('dblclick', (e) => {
@@ -41,6 +41,7 @@
       .catch(error => {
         console.error('Error:', error);
       });
+      event.target.setAttribute('contenteditable', false);
     });
   });
 </script>
