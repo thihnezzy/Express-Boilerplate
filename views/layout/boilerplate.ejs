@@ -10,7 +10,9 @@
 </head>
 <body>
   <%- include('../partials/navbar') %>
-  <%- body %> <!-- This is where the body of your child views will be injected -->
+  <main>
+    <%- body %>
+  </main>
   <script src="/js/bootstrap.bundle.min.js" nonce="<%= nonce %>"></script>
   <script nonce="<%= nonce %>">
       var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
